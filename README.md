@@ -1,45 +1,32 @@
-# electron-quick-start
+** Electron?
+Electron makes javascript developer build desktop app with javascript skills.
 
-**Clone and run for a quick way to see Electron in action.**
+** How to start?
+start with 
+`
+# Clone the Quick Start repository
+$ git clone https://github.com/electron/electron-quick-start
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
-
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
-
-A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
-
-## To Use
-
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
 # Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
+$ cd electron-quick-start
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+# Install the dependencies and run
+$ npm install && npm start
+`
 
-## Resources for Learning Electron
-
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
-
-## License
-
-[CC0 1.0 (Public Domain)](LICENSE.md)
+** Electron file structure
+*** index.html
+As always, index.html is window screen of app as html is. You can make your app with html tags. Don't forget add script with src='./renderer.js'.
+*** main.js
+It decides electron app's window size and events or it can be optimised for Mac too.
+*** package.json
+Same for npm package
+*** preload.js
+All of the Node.js APIs are available in the preload process.
+*** renderer.js
+ This file is required by the index.html file and will
+ be executed in the renderer process for that window.
+ No Node.js APIs are available in this process because
+ `nodeIntegration` is turned off. Use `preload.js` to
+ selectively enable features needed in the rendering
+ process.
